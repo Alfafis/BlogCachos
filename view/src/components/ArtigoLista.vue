@@ -32,6 +32,7 @@
   </section>
 </template>
 <script>
+import { api } from "@/services.js";
 export default {
   name: "ArtigoLista",
   data() {
@@ -41,10 +42,11 @@ export default {
   },
   methods: {
     getListas() {
-      fetch("http://localhost:3030/")
-        .then((res) => res.json())
+      api
+        .get("/")
         .then((res) => {
-          this.listas = res;
+          console.log(res.data);
+          this.listas = res.data;
         })
         .catch((err) => console.log(err));
     },
