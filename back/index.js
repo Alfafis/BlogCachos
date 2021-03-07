@@ -18,13 +18,13 @@ app.use(express.json());
 app.use(bodyParse.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  const sqlGet = "SELECT * FROM user where 1";
+  const sqlGet = "SELECT * FROM cachos where 1";
   db.query(sqlGet, (err, result) => {
     res.send(result);
   });
 });
 
-app.post("/user", upload.single(""), (req, res) => {
+app.post("/cachos", upload.single(""), (req, res) => {
   const TIPO = req.body.TIPO;
   const MATERIA = req.body.MATERIA;
   const TITULO = req.body.TITULO;
@@ -34,7 +34,7 @@ app.post("/user", upload.single(""), (req, res) => {
   const VIDEO = req.body.VIDEO;
 
   const sqlInsert =
-    "INSERT INTO user (TIPO, MATERIA, TITULO, TEXTO, DATA, FOTO, VIDEO) VALUES (?,?,?,?,?,?,?)";
+    "INSERT INTO cachos (TIPO, MATERIA, TITULO, TEXTO, DATA, FOTO, VIDEO) VALUES (?,?,?,?,?,?,?)";
   db.query(
     sqlInsert,
     [TIPO, MATERIA, TITULO, TEXTO, DATA, FOTO, VIDEO],
@@ -47,7 +47,7 @@ app.post("/user", upload.single(""), (req, res) => {
 app.delete("/delete/:ID", (req, res) => {
   const ID = req.params.ID;
   console.log(req.params);
-  const sqlDelete = "DELETE FROM user WHERE ID = ?";
+  const sqlDelete = "DELETE FROM cachos WHERE ID = ?";
   db.query(sqlDelete, ID, (err, result) => {
     if (err) console.log(err);
   });
@@ -63,7 +63,7 @@ app.put("/update", (req, res) => {
   const FOTO = req.body.FOTO;
   const VIDEO = req.body.VIDEO;
 
-  const sqlUpdate = `Update user SET TIPO = ?, MATERIA = ?, TITULO = ?, TEXTO = ?, DATA = ?, FOTO =?, VIDEO = ? WHERE ID = ?`;
+  const sqlUpdate = `Update cachos SET TIPO = ?, MATERIA = ?, TITULO = ?, TEXTO = ?, DATA = ?, FOTO =?, VIDEO = ? WHERE ID = ?`;
   db.query(
     sqlUpdate,
     [TIPO, MATERIA, TITULO, TEXTO, DATA, FOTO, VIDEO, ID],

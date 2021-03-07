@@ -11,7 +11,6 @@ export default {
   name: "Footer",
 };
 </script>
-
 <style scope>
 footer {
   background: #87f;
@@ -21,5 +20,10 @@ footer {
   color: #fff;
   position: relative;
   top: 90px;
+}
+@media (max-width: 900px) {
+  footer {
+    font-size: 0.8rem;
+  }
 }
 </style>

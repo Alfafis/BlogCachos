@@ -4,7 +4,7 @@
       <img src="@/assets/menu.png" alt="lorena-logo" />
     </div>
     <nav>
-      <button id="home" v-on:click="handleEvent">Home</button>
+      <router-link id="home" to="/">Home</router-link>
       <div id="expanded">
         <router-link class="btn" to="/">Cabelos</router-link>
         <router-link class="btn" to="/">Vídeos</router-link>
@@ -14,6 +14,7 @@
         <router-link class="btn" to="/">Motivação</router-link>
         <router-link class="btn" to="/">Contato</router-link>
       </div>
+      <button id="home" v-on:click="handleEvent">Tags</button>
     </nav>
   </header>
 </template>
@@ -46,32 +47,42 @@ nav #expanded {
   .logo img {
     width: 50%;
     margin: 0 auto;
-    padding-top: 3.2rem;
+    padding-top: 3.5rem;
   }
   nav {
     top: 0;
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     position: absolute;
     background: #ddd;
     border-top: 2px solid #aaaa;
     border-bottom: 2px solid #aaa;
   }
   nav button {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  nav #home {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  nav button,
+  nav #home {
     border: none;
     color: white;
     cursor: pointer;
     font-size: 1rem;
     background: #87f;
-    padding: 10px 15px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    padding: 15px 15px;
   }
-  nav button:hover {
+  nav button:hover,
+  nav #home:hover {
     background: #65d;
     transform: scale(1.1);
   }
-  nav button:focus {
+  nav button:focus,
+  nav #home:focus {
     outline: none;
   }
   #expanded {

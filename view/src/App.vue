@@ -22,9 +22,11 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,80");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,800");
+
 * {
   box-sizing: border-box;
+  font-family: "Montserrat", Helvetica, sans-serif;
 }
 body,
 ul,
@@ -42,7 +44,6 @@ body {
   color: #345;
   position: relative;
   background-size: 100%;
-  font-family: "Montserrat", Helvetica, sans-serif;
   background: url("./assets/backgroung.jpg") repeat top;
 }
 a {
