@@ -1,45 +1,61 @@
 <template>
   <section class="produtos-container">
-    <div v-for="lista in listas" :key="lista.ID">
-      <h2 class="materia">
-        {{ lista.MATERIA }}
-      </h2>
-      <div>
-        <label for="">
-          {{ lista.DATA.slice(0, 10) }}
-        </label>
-        <span>
-          {{ lista.TIPO }}
-        </span>
-        <h3>
-          {{ lista.TITULO }}
-        </h3>
-        <p>
-          {{ lista.TEXTO }}
-        </p>
-        <img v-if="lista.FOTO" :src="lista.FOTO" alt="" />
-        <div class="youtube-video">
-          <iframe
-            width="674"
-            height="380"
-            :src="lista.VIDEO"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
+    <div v-if="listas && listas.length" class="listas">
+      <div v-for="lista in listas" class="lista" :key="lista.ID">
+        <router-link to="/">
+          <h2 class="materia">
+            {{ lista.MATERIA }}
+          </h2>
+          <div>
+            <label>
+              {{ lista.DATA.slice(0, 10) }}
+            </label>
+            <span>
+              {{ lista.TIPO }}
+            </span>
+            <h3>
+              {{ lista.TITULO }}
+            </h3>
+            <p>
+              {{ lista.TEXTO }}
+            </p>
+            <img v-if="lista.FOTO" :src="lista.FOTO" alt="" />
+            <div class="youtube-video">
+              <iframe
+                width="674"
+                height="380"
+                :src="lista.VIDEO"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </router-link>
       </div>
+    </div>
+    <div v-else-if="listas && listas.length === 0">
+      <p>Busca sem resultados. Tente buscar outro termo.</p>
     </div>
   </section>
 </template>
 <script>
 import { api } from "@/services.js";
+// import { serialize } from "@/helpers.js";
+
 export default {
   name: "ArtigoLista",
   data() {
     return {
       listas: null,
+      listasPorPagina: 9,
     };
   },
+  // computed: {
+  //   url() {
+  //     const query = serialize(this.$route.query);
+  //     return `"/?_limit=${this.listasPorPagina}${query}"`;
+  //   },
+  // },
   methods: {
     getListas() {
       api
@@ -51,9 +67,22 @@ export default {
         .catch((err) => console.log(err));
     },
   },
+  // watch: {
+  //   url() {
+  //     this.getListas();
+  //   },
+  // },
   created() {
     this.getListas();
   },
 };
 </script>
-<style scope></style>
+<style scope>
+.listas {
+  display: block;
+}
+.lista {
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+}
+</style>
