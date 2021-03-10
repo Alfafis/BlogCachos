@@ -4,40 +4,53 @@
       <img src="@/assets/menu.png" alt="lorena-logo" />
     </div>
     <nav>
-      <router-link id="home" to="/">Home</router-link>
-      <div id="expanded">
-        <router-link class="btn" to="/">Cabelos</router-link>
-        <router-link class="btn" to="/">Vídeos</router-link>
-        <router-link class="btn" to="/">Moda</router-link>
-        <router-link class="btn" to="/">Música</router-link>
-        <router-link class="btn" to="/">Dicas</router-link>
-        <router-link class="btn" to="/">Motivação</router-link>
-        <router-link class="btn" to="/">Contato</router-link>
-      </div>
-      <button id="home" v-on:click="handleEvent">Tags</button>
+      <router-link id="home" to="/">🌎</router-link>
     </nav>
+    <div id="scrolling" v-dragscroll>
+      <router-link class="btn" to="/">Cabelos</router-link>
+      <router-link class="btn" to="/">Vídeos</router-link>
+      <router-link class="btn" to="/">Moda</router-link>
+      <router-link class="btn" to="/">Música</router-link>
+      <router-link class="btn" to="/">Dicas</router-link>
+      <router-link class="btn" to="/">Motivação</router-link>
+      <router-link class="btn" to="/">Contato</router-link>
+    </div>
   </header>
 </template>
 <script>
+import { dragscroll } from "vue-dragscroll";
+
 export default {
   name: "Header",
+  methods: {},
+  directives: {
+    dragscroll,
+  },
 };
-// function handleEvent() {
-//   // let home = document.querySelector("#home");
-//   let expanded = document.querySelector("expanded");
-//   expanded.classList.toggle("display");
-// }
 </script>
 
 <style scoped>
-nav {
+header {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav {
   box-shadow: 0 2px 4px rgb(30, 60, 90, 0.1);
 }
-nav #expanded {
-  padding: 15px 20px;
+#scrolling {
+  display: flex;
+  overflow: auto;
+  max-width: 800px;
+  overflow: hidden;
+  height: 3.4rem;
+  align-items: center;
+}
+
+#scrolling a {
+  cursor: default;
+  margin-left: 0.625rem;
 }
 .logo img {
   width: 25%;
@@ -55,38 +68,25 @@ nav #expanded {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    background: #ddd;
-    border-top: 2px solid #aaaa;
-    border-bottom: 2px solid #aaa;
-  }
-  nav button {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
   }
   nav #home {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }
-  nav button,
   nav #home {
     border: none;
     color: white;
     cursor: pointer;
     font-size: 1rem;
     background: #87f;
-    padding: 15px 15px;
+    padding: 10px 15px;
   }
-  nav button:hover,
   nav #home:hover {
     background: #65d;
     transform: scale(1.1);
   }
-  nav button:focus,
   nav #home:focus {
     outline: none;
-  }
-  #expanded {
-    display: none;
   }
 }
 </style>

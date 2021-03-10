@@ -5,7 +5,6 @@
       <router-view />
     </main>
     <Footer />
-    <!-- <router-link to="/">Home</router-link> -->
   </div>
 </template>
 
