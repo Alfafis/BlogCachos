@@ -133,8 +133,6 @@ p {
 @media (max-width: 768px) {
   .listas {
     grid-template-columns: auto;
-  }
-  .lista {
     margin: 0;
   }
 }

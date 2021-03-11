@@ -99,7 +99,7 @@ img {
     flex: unset;
   }
   .btn {
-    font-size: 0.625rem;
+    font-size: 1rem;
     padding: 0.625rem 1.25rem;
   }
 }
