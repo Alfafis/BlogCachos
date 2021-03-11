@@ -2,17 +2,15 @@
   <section class="produtos-container">
     <div v-if="listas && listas.length" class="listas">
       <div v-for="lista in listas" class="lista" :key="lista.ID">
-        <router-link to="/">
+        <router-link to="/" :tipo="lista.TIPO">
           <h2 class="materia">
             {{ lista.MATERIA }}
           </h2>
-          <div>
-            <label>
-              {{ lista.DATA.slice(0, 10) }}
-            </label>
-            <span>
-              {{ lista.TIPO }}
-            </span>
+          <label>
+            📆
+            {{ lista.DATA.slice(0, 10) }}
+          </label>
+          <div class="card">
             <h3>
               {{ lista.TITULO }}
             </h3>
@@ -22,7 +20,7 @@
             <img v-if="lista.FOTO" :src="lista.FOTO" alt="" />
             <div class="youtube-video">
               <iframe
-                width="320"
+                width="100%"
                 height="320"
                 :src="lista.VIDEO"
                 frameborder="0"
@@ -42,6 +40,7 @@
 import { api } from "@/services.js";
 import { serialize } from "@/helpers.js";
 import dados from "../assets/dados.json";
+
 export default {
   name: "ArtigoLista",
   data() {
@@ -82,10 +81,35 @@ export default {
 <style scope>
 .lista {
   display: grid;
-  border-radius: 4px;
-  grid-column-gap: 1rem;
-  background-color: white;
-  grid-template-columns: 1, 1fr;
+  border-radius: 1rem;
   padding: 0.625rem;
+  grid-column-gap: 1rem;
+  background-color: #ffb4af;
+  grid-template-columns: 1fr;
+}
+.lista + .lista {
+  background-color: #b5ddda;
+}
+h2 {
+  color: #333;
+  text-transform: capitalize;
+  font: bold 1.625rem "Quicksand";
+}
+.card {
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+}
+h3 {
+  color: #333;
+  text-transform: capitalize;
+  font: bold 1rem "Quicksand";
+}
+label {
+  color: #fff;
+}
+p {
+  color: #fff;
+  font: 500 1rem "Quicksand";
+  padding-bottom: 1.25rem;
 }
 </style>

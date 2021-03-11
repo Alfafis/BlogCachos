@@ -43,8 +43,8 @@ ul {
 body {
   color: #345;
   position: relative;
-  background-size: 100%;
-  background: url("./assets/backgroung.jpg") repeat top;
+  background-color: #fffdfd;
+  margin: 0.625rem;
 }
 a {
   color: #345;
@@ -62,12 +62,11 @@ img {
   cursor: pointer;
   font-size: 1rem;
   background: #87f;
-  border-radius: 4px;
+  border-radius: 5px;
   text-align: center;
   transition: all 0.3s;
   margin-bottom: 0.325rem;
   padding: 0.625rem 1.875rem;
-  box-shadow: 0 4px 8px rgb(30, 60, 90, 0.2);
   font-family: "Montserrat", Helvetica, sans-serif;
 }
 .btn:hover {

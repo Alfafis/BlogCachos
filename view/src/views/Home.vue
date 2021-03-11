@@ -20,12 +20,10 @@ export default {
 <style scoped>
 section {
   display: block;
-  padding: 15px;
 }
 h1 {
   color: #87f;
-  font-size: 2rem;
-  margin-top: 20px;
-  text-align: center;
+  font: 600 2.4rem "Montserrat";
+  margin-top: 1rem;
 }
 </style>
