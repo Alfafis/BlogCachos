@@ -109,7 +109,7 @@ label {
 }
 p {
   color: #fff;
-  font: 500 1rem "Quicksand";
+  font: 500 16px "Quicksand";
   padding-bottom: 1.25rem;
 }
 </style>
