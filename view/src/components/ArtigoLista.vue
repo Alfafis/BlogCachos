@@ -61,15 +61,11 @@ export default {
       api
         .get("/")
         .then((res) => {
-          console.log("banco");
-          console.log("res", res.data);
           this.listas = res.data;
         })
         .catch((err) => console.log(err));
       if (this.listas == null) {
-        console.log("json");
         this.listas = dados;
-        console.log("dados", dados);
       }
     },
   },
