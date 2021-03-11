@@ -134,5 +134,8 @@ p {
   .listas {
     grid-template-columns: auto;
   }
+  .lista {
+    margin: 0;
+  }
 }
 </style>
