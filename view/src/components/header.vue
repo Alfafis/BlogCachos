@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <button class="icon-button">
+      <button class="icon-button" @click.prevent="login">
         <i class="fas fa-grip-horizontal"></i>
       </button>
       <img src="@/assets/bio.jpg" alt="lorena-logo" />
@@ -26,7 +26,11 @@ import { dragscroll } from "vue-dragscroll";
 
 export default {
   name: "Header",
-  methods: {},
+  methods: {
+    login() {
+      console.log("alert");
+    },
+  },
   directives: {
     dragscroll,
   },
