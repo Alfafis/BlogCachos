@@ -82,7 +82,8 @@ export default {
 .listas {
   display: grid;
   grid-template-columns: auto auto;
-  grid-column-gap: 1rem;
+  grid-column-gap: 2.4rem;
+  margin: 0 2.4rem;
 }
 .lista {
   display: grid;
@@ -92,6 +93,10 @@ export default {
   background-color: #ffb4af;
   grid-template-columns: 1fr;
   margin-bottom: 1rem;
+}
+.lista:hover {
+  transition: 0.3s transform;
+  transform: scale(1.1);
 }
 .lista + .lista {
   background-color: #b5ddda;
@@ -124,8 +129,6 @@ p {
 }
 .youtube-video:hover {
   opacity: 1;
-  transition: 0.3s transform;
-  transform: scale(1.1);
 }
 @media (max-width: 768px) {
   .listas {
