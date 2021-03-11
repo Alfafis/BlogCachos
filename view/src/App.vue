@@ -43,6 +43,9 @@ ul {
 body {
   color: #345;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-image: url("../src/assets/background-web.jpg");
 }
 header,
@@ -90,6 +93,7 @@ img {
 @media (max-width: 768px) {
   body {
     background-image: url("../src/assets/background-mobile.jpg");
+    background-repeat: repeat-y;
   }
   header,
   main {
