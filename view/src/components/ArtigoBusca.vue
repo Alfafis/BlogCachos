@@ -24,4 +24,8 @@ export default {
   },
 };
 </script>
-<style scope></style>
+<style scope>
+form {
+  visibility: hidden;
+}
+</style>

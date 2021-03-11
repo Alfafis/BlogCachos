@@ -22,8 +22,8 @@
             <img v-if="lista.FOTO" :src="lista.FOTO" alt="" />
             <div class="youtube-video">
               <iframe
-                width="674"
-                height="380"
+                width="320"
+                height="320"
                 :src="lista.VIDEO"
                 frameborder="0"
                 allowfullscreen
@@ -78,11 +78,12 @@ export default {
 };
 </script>
 <style scope>
-.listas {
-  display: block;
-}
 .lista {
-  border-top: 2px solid lightgrey;
-  border-bottom: 2px solid lightgrey;
+  display: grid;
+  border-radius: 4px;
+  grid-column-gap: 1rem;
+  background-color: white;
+  grid-template-columns: 1, 1fr;
+  padding: 0.625rem;
 }
 </style>
