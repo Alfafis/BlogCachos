@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="logo">
-      <button class="icon-button">⬜</button>
+      <button class="icon-button">
+        <i class="fas fa-grip-horizontal"></i>
+      </button>
       <img src="@/assets/bio.jpg" alt="lorena-logo" />
     </div>
     <span
@@ -39,36 +41,47 @@ header {
   justify-content: space-between;
 }
 span {
+  margin: 5rem 0;
   color: #838383;
-  font: bold 1.25rem "Quicksand";
+  font: bold 1rem "Quicksand";
 }
 h2 {
   color: #222;
-  font: bold 3.2rem "Quicksand";
+  font: bold 2rem "Quicksand";
 }
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  right: 0;
+  display: block;
+  position: absolute;
 }
 .logo img {
+  float: right;
   width: 10rem;
-  margin: 0 auto;
+  margin: 0;
   border-radius: 50%;
 }
-.logo .icon-button {
+.icon-button {
+  display: none;
+  cursor: pointer;
   border: none;
   background: none;
   font-size: 1.625rem;
   padding: 0 0 1.5rem 1.5rem;
 }
-.logo .icon-button:focus {
+.icon-button:focus {
   outline: none;
+}
+.icon-button i {
+  color: #b1b1b1;
+}
+.icon-button i:hover {
+  color: #87f;
+  transform: scale(1.1);
 }
 nav#scrolling {
   overflow: auto;
   display: flex;
-  max-width: 30rem;
+  justify-content: center;
   padding: 1rem 0;
   height: fit-content;
 }
@@ -76,15 +89,29 @@ nav#scrolling::-webkit-scrollbar {
   display: none;
 }
 nav#scrolling a {
-  cursor: default;
   margin-right: 0.625rem;
   box-shadow: 0px 3px 4px 1px #6e6e6e80;
 }
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .logo {
+    position: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .logo img {
-    width: 7.2rem;
+    width: 6rem;
     padding: 0.625rem;
     margin: 0.625rem;
+  }
+  span {
+    margin: 0;
+  }
+  .icon-button {
+    display: block;
+  }
+  nav#scrolling {
+    max-width: 30rem;
   }
 }
 </style>

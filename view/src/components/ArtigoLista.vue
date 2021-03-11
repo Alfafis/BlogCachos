@@ -20,8 +20,8 @@
             <img v-if="lista.FOTO" :src="lista.FOTO" alt="" />
             <div class="youtube-video">
               <iframe
-                width="100%"
-                height="320"
+                width="75%"
+                height="200"
                 :src="lista.VIDEO"
                 frameborder="0"
                 allowfullscreen
@@ -79,6 +79,11 @@ export default {
 };
 </script>
 <style scope>
+.listas {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1rem;
+}
 .lista {
   display: grid;
   border-radius: 1rem;
@@ -86,6 +91,7 @@ export default {
   grid-column-gap: 1rem;
   background-color: #ffb4af;
   grid-template-columns: 1fr;
+  margin-bottom: 1rem;
 }
 .lista + .lista {
   background-color: #b5ddda;
@@ -111,5 +117,19 @@ p {
   color: #fff;
   font: 500 16px "Quicksand";
   padding-bottom: 1.25rem;
+}
+.youtube-video {
+  text-align: center;
+  opacity: 0.5;
+}
+.youtube-video:hover {
+  opacity: 1;
+  transition: 0.3s transform;
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .listas {
+    grid-template-columns: auto;
+  }
 }
 </style>

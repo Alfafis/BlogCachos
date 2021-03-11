@@ -13,15 +13,19 @@ export default {
 </script>
 <style scope>
 footer {
+  top: 90px;
+  color: #fff;
   background: #87f;
-  padding: 25px 0;
+  padding: 1rem 0;
   text-align: center;
   font-size: 1.2rem;
-  color: #fff;
   position: relative;
-  top: 90px;
+  align-items: center;
 }
-@media (max-width: 900px) {
+p {
+  padding: 0.625rem;
+}
+@media (max-width: 768px) {
   footer {
     font-size: 0.8rem;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div id="nav">
+  <div>
     <Header />
     <main id="main">
       <router-view />
@@ -44,7 +44,11 @@ body {
   color: #345;
   position: relative;
   background-color: #fffdfd;
-  margin: 0.625rem;
+}
+header,
+main {
+  max-width: 75%;
+  margin: 0 auto;
 }
 a {
   color: #345;
@@ -62,7 +66,7 @@ img {
   cursor: pointer;
   font-size: 1rem;
   background: #87f;
-  border-radius: 5px;
+  border-radius: 25px;
   text-align: center;
   transition: all 0.3s;
   margin-bottom: 0.325rem;
@@ -72,6 +76,7 @@ img {
 .btn:hover {
   background: #65d;
   transform: scale(1.1);
+  transition: 0.3s transform;
 }
 #app {
   display: flex;
@@ -81,12 +86,21 @@ img {
 #main {
   flex: 1;
 }
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  header,
+  main {
+    max-width: 90%;
+    margin: 0 auto;
+  }
   #app {
     display: unset;
   }
   #main {
     flex: unset;
+  }
+  .btn {
+    font-size: 0.625rem;
+    padding: 0.625rem 1.25rem;
   }
 }
 </style>

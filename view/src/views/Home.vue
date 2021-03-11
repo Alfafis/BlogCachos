@@ -23,7 +23,7 @@ section {
 }
 h1 {
   color: #87f;
-  font: 600 2.4rem "Montserrat";
+  font: 600 2rem "Quicksand";
   margin-top: 1rem;
 }
 </style>
