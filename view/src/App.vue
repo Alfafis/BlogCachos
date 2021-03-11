@@ -43,6 +43,7 @@ ul {
 body {
   color: #345;
   position: relative;
+  background-image: url("../src/assets/background-web.jpg");
 }
 header,
 main {
@@ -87,6 +88,9 @@ img {
   flex: 1;
 }
 @media (max-width: 768px) {
+  body {
+    background-image: url("../src/assets/background-mobile.jpg");
+  }
   header,
   main {
     max-width: 90%;
@@ -99,7 +103,6 @@ img {
     flex: unset;
   }
   .btn {
-    font-size: 1rem;
     padding: 0.625rem 1.25rem;
   }
 }
