@@ -112,6 +112,7 @@ nav#scrolling a {
   }
   nav#scrolling {
     max-width: 30rem;
+    justify-content: flex-start;
   }
 }
 </style>
