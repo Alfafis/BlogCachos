@@ -1,8 +1,8 @@
 <template>
   <footer>
     <p>
-      ©2017 - lorenatheressa.com - Todos os direitos reservados / Developed
-      Alfafis.
+      ©2017 - lorenatheressa.com - Todos os direitos reservados / Desenvolvido
+      por Alfafis.
     </p>
   </footer>
 </template>

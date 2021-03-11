@@ -3,13 +3,12 @@
     <div v-if="listas && listas.length" class="listas">
       <div v-for="lista in listas" class="lista" :key="lista.ID">
         <router-link to="/" :tipo="lista.TIPO">
-          <h2 class="materia">
-            {{ lista.MATERIA }}
-          </h2>
-          <label>
-            📆
-            {{ lista.DATA.slice(0, 10) }}
-          </label>
+          <div class="card-title">
+            <h2 class="materia">
+              {{ lista.MATERIA }}
+            </h2>
+            <label> 📆 {{ getDate(lista.DATA) }} </label>
+          </div>
           <div class="card">
             <h3>
               {{ lista.TITULO }}
@@ -18,15 +17,15 @@
               {{ lista.TEXTO }}
             </p>
             <img v-if="lista.FOTO" :src="lista.FOTO" alt="" />
-            <div class="youtube-video">
-              <iframe
-                width="75%"
-                height="200"
-                :src="lista.VIDEO"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
+          </div>
+          <div class="youtube-video">
+            <iframe
+              width="100%"
+              height="250"
+              :src="lista.VIDEO"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
           </div>
         </router-link>
       </div>
@@ -67,6 +66,35 @@ export default {
         this.listas = dados;
       }
     },
+    getDate(date) {
+      console.log("date", date);
+      var dt = new Date(date);
+      const format = (date) => {
+        var ms = [
+          "Janeiro",
+          "Fevereiro",
+          "Março",
+          "Abril",
+          "Maio",
+          "Junho",
+          "Julho",
+          "Agosto",
+          "Setembro",
+          "Outubro",
+          "Novembro",
+          "Dezembro",
+        ];
+        return (
+          date.getDate() +
+          " de " +
+          ms[date.getMonth()] +
+          " de " +
+          date.getFullYear()
+        );
+      };
+      let dataFinal = format(dt);
+      return dataFinal;
+    },
   },
   watch: {
     url() {
@@ -81,25 +109,28 @@ export default {
 <style scope>
 .listas {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, auto);
   grid-column-gap: 2.4rem;
   margin: 0 2.4rem;
 }
 .lista {
-  display: grid;
   border-radius: 1rem;
-  padding: 0.625rem;
-  grid-column-gap: 1rem;
-  background-color: #ffb4af;
-  grid-template-columns: 1fr;
   margin-bottom: 1rem;
-}
-.lista:hover {
-  transition: 0.3s transform;
-  transform: scale(1.1);
+  background-color: #ffb4af;
 }
 .lista + .lista {
   background-color: #b5ddda;
+}
+.lista a {
+  display: grid;
+  grid-template-columns: auto;
+}
+.card-title {
+  border-bottom: 1px solid #eee;
+}
+.card-title,
+.card {
+  padding: 0.625rem;
 }
 h2 {
   color: #333;
@@ -107,13 +138,13 @@ h2 {
   font: bold 1.625rem "Quicksand";
 }
 .card {
-  margin-top: 1rem;
-  border-top: 1px solid #eee;
+  height: 15rem;
+  margin-bottom: 1rem;
 }
 h3 {
   color: #333;
   text-transform: capitalize;
-  font: bold 1rem "Quicksand";
+  font: bold 1.25rem "Quicksand";
 }
 label {
   color: #fff;
@@ -121,13 +152,18 @@ label {
 p {
   color: #fff;
   font: 500 16px "Quicksand";
-  padding-bottom: 1.25rem;
 }
 .youtube-video {
-  text-align: center;
+  margin: 0;
+  padding: 0;
   opacity: 0.5;
+  margin-bottom: -4px;
 }
-.youtube-video:hover {
+.youtube-video iframe {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.lista:hover .youtube-video {
   opacity: 1;
 }
 @media (max-width: 768px) {
