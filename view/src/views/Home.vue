@@ -1,7 +1,9 @@
 <template>
   <section>
-    <h1>Artigo</h1>
-    <ArtigoBusca />
+    <div id="flex">
+      <h1>Artigo</h1>
+      <ArtigoBusca />
+    </div>
     <ArtigoLista />
   </section>
 </template>
@@ -24,6 +26,11 @@ section {
 h1 {
   color: #87f;
   font: 600 2rem "Quicksand";
-  margin-top: 1rem;
+}
+#flex {
+  display: flex;
+  margin: 1rem 0;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>

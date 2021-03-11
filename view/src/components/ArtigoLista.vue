@@ -134,19 +134,22 @@ export default {
 }
 h2 {
   color: #333;
+  margin-bottom: 0.5rem;
   text-transform: capitalize;
   font: bold 1.625rem "Quicksand";
 }
 .card {
-  height: 15rem;
+  height: 12rem;
   margin-bottom: 1rem;
 }
 h3 {
   color: #333;
+  margin: 0.5rem 0;
   text-transform: capitalize;
   font: bold 1.25rem "Quicksand";
 }
 label {
+  float: right;
   color: #fff;
 }
 p {
