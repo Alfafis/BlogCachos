@@ -5,6 +5,7 @@
       <router-view />
     </main>
     <Footer />
+    <div id="bck"></div>
   </div>
 </template>
 
@@ -43,9 +44,22 @@ ul {
 body {
   color: #345;
   position: relative;
-  background-repeat: no-repeat;
+}
+#bck {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 99vw;
+  height: 99vh;
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(3px);
+  position: absolute;
   background-size: cover;
+  transform: rotateY(180deg);
   background-position: center;
+  background-repeat: no-repeat;
   background-image: url("../src/assets/background-web.jpg");
 }
 header,
@@ -91,9 +105,10 @@ img {
   flex: 1;
 }
 @media (max-width: 768px) {
-  body {
-    background-image: url("../src/assets/background-mobile.jpg");
+  #bck {
+    width: 100%;
     background-repeat: repeat-y;
+    background-image: url("../src/assets/background-mobile.jpg");
   }
   header,
   main {
