@@ -40,8 +40,8 @@
 </template>
 <script>
 import { api } from "@/services.js";
-// import { serialize } from "@/helpers.js";
-
+import { serialize } from "@/helpers.js";
+import dados from "../assets/dados.json";
 export default {
   name: "ArtigoLista",
   data() {
@@ -50,28 +50,34 @@ export default {
       listasPorPagina: 9,
     };
   },
-  // computed: {
-  //   url() {
-  //     const query = serialize(this.$route.query);
-  //     return `"/?_limit=${this.listasPorPagina}${query}"`;
-  //   },
-  // },
+  computed: {
+    url() {
+      const query = serialize(this.$route.query);
+      return `"/?_limit=${this.listasPorPagina}${query}"`;
+    },
+  },
   methods: {
     getListas() {
       api
         .get("/")
         .then((res) => {
-          console.log(res.data);
+          console.log("banco");
+          console.log("res", res.data);
           this.listas = res.data;
         })
         .catch((err) => console.log(err));
+      if (this.listas == null) {
+        console.log("json");
+        this.listas = dados;
+        console.log("dados", dados);
+      }
     },
   },
-  // watch: {
-  //   url() {
-  //     this.getListas();
-  //   },
-  // },
+  watch: {
+    url() {
+      this.getListas();
+    },
+  },
   created() {
     this.getListas();
   },

@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <div class="">Olá meus seguidores, Aqui é Lorena Theressa</div>
+      <h2>Olá meus seguidores,<span> Aqui é Lorena Theressa</span></h2>
       <img src="@/assets/menu.png" alt="lorena-logo" />
     </div>
     <nav id="scrolling" v-dragscroll>
@@ -33,6 +33,9 @@ header {
   position: relative;
   flex-direction: column;
   justify-content: space-between;
+}
+h2 {
+  font-family: "Quicksand";
 }
 .logo {
   display: flex;

@@ -5,6 +5,7 @@ const app = express();
 const mysql = require("mysql");
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
+const fs = require("fs");
 
 const db = mysql.createPool({
   host: "localhost",
@@ -21,6 +22,8 @@ app.get("/", (req, res) => {
   const sqlGet = "SELECT * FROM cachos where 1";
   db.query(sqlGet, (err, result) => {
     res.send(result);
+    let data = JSON.stringify(result);
+    fs.writeFileSync("../view/src/assets/dados.json", data);
   });
 });
 
