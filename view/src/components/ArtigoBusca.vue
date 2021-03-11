@@ -32,7 +32,6 @@ export default {
       this.$router.push({ query: { q: this.busca } });
     },
     search() {
-      console.log("clicou");
       let input = document.querySelector("#busca");
       if (input.value == "") {
         input.classList.toggle("display");

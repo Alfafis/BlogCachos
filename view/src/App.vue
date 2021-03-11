@@ -43,7 +43,6 @@ ul {
 body {
   color: #345;
   position: relative;
-  background-color: #fffdfd;
 }
 header,
 main {
