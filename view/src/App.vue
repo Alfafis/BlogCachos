@@ -47,7 +47,7 @@ body {
 }
 header,
 main {
-  max-width: 75%;
+  max-width: 70%;
   margin: 0 auto;
 }
 a {
@@ -71,6 +71,7 @@ img {
   transition: all 0.3s;
   margin-bottom: 0.325rem;
   padding: 0.625rem 1.875rem;
+  box-shadow: 0px 3px 4px 1px #6e6e6e80;
   font-family: "Montserrat", Helvetica, sans-serif;
 }
 .btn:hover {

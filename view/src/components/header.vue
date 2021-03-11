@@ -91,7 +91,6 @@ nav#scrolling::-webkit-scrollbar {
 nav#scrolling a {
   width: 100vw;
   margin-right: 0.625rem;
-  box-shadow: 0px 3px 4px 1px #6e6e6e80;
 }
 @media (max-width: 768px) {
   .logo {

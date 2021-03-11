@@ -17,7 +17,6 @@
       type="text"
       placeholder="Digite para buscar"
     />
-    <!-- @click.prevent="buscarListas" -->
   </form>
 </template>
 <script>
@@ -33,8 +32,14 @@ export default {
       this.$router.push({ query: { q: this.busca } });
     },
     search() {
+      console.log("clicou");
       let input = document.querySelector("#busca");
-      input.classList.toggle("display");
+      if (input.value == "") {
+        input.classList.toggle("display");
+      } else {
+        this.$router.push({ query: { q: this.busca } });
+        input.value = "";
+      }
     },
   },
 };

@@ -67,7 +67,6 @@ export default {
       }
     },
     getDate(date) {
-      console.log("date", date);
       var dt = new Date(date);
       const format = (date) => {
         var ms = [
@@ -111,7 +110,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-column-gap: 2.4rem;
-  margin: 0 2.4rem;
 }
 .lista {
   border-radius: 1rem;
@@ -124,6 +122,9 @@ export default {
 .lista a {
   display: grid;
   grid-template-columns: auto;
+}
+.lista:hover {
+  box-shadow: 0px 3px 4px 1px #6e6e6e80;
 }
 .card-title {
   border-bottom: 1px solid #eee;
