@@ -57,6 +57,7 @@ input#busca {
   visibility: hidden;
   transition: 0.5s width;
   border-bottom: 2px solid #87f;
+  background-color: transparent;
 }
 input#busca:focus {
   outline: none;
