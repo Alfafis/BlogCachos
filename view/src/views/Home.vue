@@ -22,8 +22,8 @@ export default {
 <style scoped>
 section {
   max-width: 80%;
-  display: block;
   margin: 0 auto;
+  display: block;
 }
 h1 {
   color: #87f;
@@ -34,5 +34,10 @@ h1 {
   margin: 1rem 0;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  section {
+    max-width: 100%;
+  }
 }
 </style>
