@@ -21,7 +21,9 @@ export default {
 </script>
 <style scoped>
 section {
+  max-width: 80%;
   display: block;
+  margin: 0 auto;
 }
 h1 {
   color: #87f;

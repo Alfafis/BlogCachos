@@ -51,7 +51,7 @@ export default {
   computed: {
     url() {
       const query = serialize(this.$route.query);
-      return `"/?_limit=${this.listasPorPagina}${query}"`;
+      return `${this.listasPorPagina}${query}`;
     },
   },
   methods: {

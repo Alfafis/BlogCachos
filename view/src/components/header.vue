@@ -86,7 +86,7 @@ nav#scrolling {
   overflow: auto;
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1rem;
   height: fit-content;
 }
 nav#scrolling::-webkit-scrollbar {

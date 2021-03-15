@@ -64,7 +64,7 @@ body {
 }
 header,
 main {
-  max-width: 70%;
+  max-width: 90%;
   margin: 0 auto;
 }
 a {
